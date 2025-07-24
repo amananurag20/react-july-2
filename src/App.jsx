@@ -1,24 +1,30 @@
-import {Product} from "./components/Product.jsx"
+import { useState } from "react";
+import HomePage from "./components/HomePage";
+import Mobile from "./components/Mobile";
+import { Product } from "./components/Product";
 
 const App = () => {
-  
-  const marks=99;
-  const show=true;
+  const [count, setCount] = useState(1000);
 
+  const handleClick = () => {
+    setCount(count + 1000);
+  };
+
+  console.log("byee");
+  
   return (
     <div>
-       <h1 style={{backgroundColor:"red",color:"white"}}>this is heading</h1>
-       <p>this is paragraph </p>
-       <h3>this is my marks:{marks}</h3>
+      <h1>the value of count :{count}</h1>
+      <h2>byeee</h2>
 
-       {show==true?<h1>start</h1>:<h1>end</h1>} 
+      <button onClick={handleClick}>Increase value of count</button>
 
-         <Product/>
-         <Product></Product>
-         
-      
+      <Mobile name={"motorolla"} price={21000}/>
+      <Mobile name={"apple"} price={80000}/>
+      <Mobile/>
+      <Product count={count} setCount={setCount}/>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
