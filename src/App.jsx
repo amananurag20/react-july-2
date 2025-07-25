@@ -1,29 +1,24 @@
-import { useState } from "react";
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./components/HomePage";
-import Mobile from "./components/Mobile";
+import Signup from "./components/Signup";
 import { Product } from "./components/Product";
+import Login from "./components/Login";
+import Navbar from "./components/Navbar";
 
 const App = () => {
-  const [count, setCount] = useState(1000);
-
-  const handleClick = () => {
-    setCount(count + 1000);
-  };
-
-  console.log("byee");
-  
   return (
-    <div>
-      <h1>the value of count :{count}</h1>
-      <h2>byeee</h2>
-
-      <button onClick={handleClick}>Increase value of count</button>
-
-      <Mobile name={"motorolla"} price={21000}/>
-      <Mobile name={"apple"} price={80000}/>
-      <Mobile/>
-      <Product count={count} setCount={setCount}/>
-    </div>
+    <>    
+    <BrowserRouter>
+    <Navbar/>
+      <Routes>
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/product" element={<Product />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
+    </>
   );
 };
 
