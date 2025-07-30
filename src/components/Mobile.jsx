@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Mobile = ({name="xyz",price}) => {
+const Mobile = ({name="xyz",price,count, setCount}) => {
    
   return (
     <div>
