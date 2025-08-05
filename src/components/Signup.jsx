@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useState } from "react";
 
 const Signup = () => {
+  const [count, setCount] = useState(1000);
+
+  const handleClick = () => {
+    setCount(count + 1000);
+  };
+  console.log("byeeeeee");
+
   return (
     <div>
-      <img src='https://i.ytimg.com/vi/_JrIZaD-K-g/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBmghCTvgjjoeTkQH4q6V51Nn9S2w'/>
+      <h1> value of count is {count}</h1>
+      <p>this is paragraph</p>
+      <button onClick={handleClick}>increae value of count</button>
     </div>
-  )
-}
+  );
+};
 
-export default Signup
+export default Signup;

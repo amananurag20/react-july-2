@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import Navbar from './Navbar'
 import ThemeContext from '../context/ThemeContext'
+import Food from './Food';
 
 const HomePage = () => {
    
@@ -23,6 +24,9 @@ const HomePage = () => {
       <button onClick={handleTheme}>Toggle Theme</button>
       <img src='https://www.bluefrogdm.com/hubfs/Imported_Blog_Media/homepage-content-3.jpg'/>
      <h1> HomePage</h1>
+
+     <Food name={"aman"} price={100}/>
+     <Food marks={100}>amanaurag</Food>
 
      
     </div>

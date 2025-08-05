@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import ThemeContext from '../context/ThemeContext';
+import axios from 'axios';
 
 const Login = () => {
 
@@ -18,7 +19,14 @@ const Login = () => {
   }
   console.log(password);
 
- 
+  const handleLogin=async()=>{
+      const response= await axios.post("http://localhost:8000/user/login",{
+        email,
+        password
+      });
+
+      console.log(response.data);
+  } 
 
   return (
     <div
@@ -82,6 +90,8 @@ const Login = () => {
             cursor: 'pointer',
             fontWeight: 'bold',
           }}
+
+          onClick={handleLogin}
         >
           Login
         </button>
