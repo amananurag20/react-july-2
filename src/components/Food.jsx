@@ -1,9 +1,9 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
-const Food = () => {
-    const data= useParams();
-    console.log(data);
+const Food = (props) => {
+  console.log(props)
+ 
   return (
     <div>
       <h1>food</h1>
